@@ -1,7 +1,6 @@
 @startuml architecture
-title Architecture
+title Hrmos Automation bot architecture
 left to right direction
-
 ' ① アイコンの定義 ＆ インポート
 !define AWSPuml https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/v10.0/dist
 !includeurl AWSPuml/AWSCommon.puml
@@ -15,13 +14,8 @@ left to right direction
 !define AzurePuml https://raw.githubusercontent.com/plantuml-stdlib/Azure-PlantUML/release/2-1/dist
 !includeurl AzurePuml/AzureCommon.puml
 !includeurl AzurePuml/General/Azure.puml
-!includeurl AzurePuml/Compute/AzureAppService.puml
 !includeurl AzurePuml/AIMachineLearning/AzureBotService.puml
-!includeurl AzurePuml/AIMachineLearning/AzureCognitiveServices.puml
-!includeurl AzurePuml/AIMachineLearning/AzureMachineLearningService.puml
 !includeurl AzurePuml/AzureSimplified.puml
-!includeurl AzurePuml/Databases/AzureCosmosDb.puml
-!includeurl AzurePuml/Storage/AzureBlobStorage.puml
 !include ./icons.pu
 
 ' ② 利用するアイコンを宣言
@@ -31,28 +25,13 @@ Teams(teams, "Teams", "Teams")
 
 Hrmos(hrmos, "HRMOS", "HRMOS")
 
-Pas(pas, "PAS", "PAS")
-
-Azure(azure, Azure ,Azure) {
-  AzureAppService(azureAppService,AzureAppService, AzureAppService){
-    AzureBotService(azureBotService, "BotService", "BotService")
-  }
-  
-  AzureMachineLearningService(azureMachineLearningService, MachineLearning, AzureMachineLearningService) {
-    AzureCognitiveServices(azureCognitiveServices, "CognitiveService", "CognitiveService")
-  }
-
-  AzureBlobStorage(azureBlobStorage, AzureBlobStorage, AzureBlobStorage) {
-    AzureCosmosDb(azureCosmosDb, "CosmosDb", "CosmosDb")
-  }
-
+Azure(azure, Azure ,"Azure") {
+  AzureBotService(azureBotService, "Azure Bot Service", "Azure Bot Service")
 }
 
 ' ③ アイコンの関係を記述
-clientUser 0--> teams: chat
+clientUser 0--> teams: Send command
 teams 0--> azureBotService: Connect Bot service
 azureBotService 0---> hrmos: Send request via HRMOS api
-azureBotService 0---> pas: Send request via api
-azureMachineLearningService -[hidden]- azureBlobStorage
 
 @enduml

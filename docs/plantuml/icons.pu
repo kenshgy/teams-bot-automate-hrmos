@@ -1,8 +1,5 @@
 @startuml icons
 
-' 画像の取り込み方
-' java -jar plantuml.jar -encodesprite 16z xxx.png
-
 sprite $icon_hrmos [64x64/16z] {
 xPE72Xn134CztPPq__-xsJ6mN4lloJvOQmwiaQwHlBYukBYuqAcwb-STyLD8EU_tT7VyqWOdqikEFcBDq2ItT5Sc3zYAzy6nZkaWrtBFopoaM7cLJuTooS6t
 Q1eODWMpOkOtqehKRUztErZIEgHyfFqot9Z-WR1EXbMecc_RO5GBrKBEZ-RtqRS_dvPX0yUZj6btwzOcHBtFBwNOLDX12QhKskRkorA5l9Upc8K-afyxDnmP
@@ -17,14 +14,8 @@ fsLJZIpdg5SZQYjqnKSqd_RLU_VLllOnwxthz37Xe_DfdwMd_zhpXzxDf_oWoqV-Sld2wnv_oKRxJ-M1
 ln-h_P6RMliib7mzKC-UE24H8NQ-7gczf0nPsHMy3U3WLH2mFeyTox60H6Tv1aYYcJ32rAKZKeR9PuAi_A6TdNq3
 }
 
-sprite $pas_icon [24x26/16z] {
-RP1P0WCX24C_K1Au_u6BIVUPT7_80vl5l0kx2xVyXBZXJl6dMARl8jwyfiITV9tWapE6x8ZvA5lnv6i4AtRtYf0Ovf6jBiP4BV8l_O2E1pp3-zXR4LAUahb3
-MrBTuzdpzZglzzrDwgVNs4S3o-XntcEbR-8X6KhwLuWpxNrrYA_39N9AN7EHqAWDaYyE_nFQzXseBoTU_dM-pmSFXrPN5bh9V1LmXhzkZdI-_TNM_5MexifF
-GD82TkS3
-}
 
 !define Hrmos(e_alias, e_label, e_techn) AzureEntity(e_alias, e_label, e_techn, Navy, icon_hrmos, icon_hrmos)
-!define Teams(e_alias, e_label, e_techn) AzureEntity(e_alias, e_label, e_techn, DarkSlateBlue, icon_teams, icon_teams_white)
-!define Pas(e_alias, e_label, e_techn) AzureEntity(e_alias, e_label, e_techn, Green, pas_icon, pas_icon)
+!define Teams(e_alias, e_label, e_techn) AzureEntity(e_alias, e_label, e_techn, Blue, icon_teams, icon_teams_white)
 
 @enduml
