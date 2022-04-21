@@ -1,0 +1,23 @@
+{
+  "status": 200,
+  "users": [
+    {    "id": 2,
+      "number": "",
+      "last_name": "井上",
+      "first_name": "顕介",
+      "last_name_kana": "",
+      "first_name_kana": "",
+      "start_date": "2022-02-01",
+      "end_date": null,
+      "cutoff_date": 31,
+      "nfc_tag_pc": null,
+      "email": "ken.shgy.1386@gmail.com",
+      "lodgment_id": null,
+      "department_id": null,
+      "employment_id": null,
+      "created_at": "2022-03-22T09:46:48.000+09:00",
+      "updated_at": "2022-04-14T15:22:30.000+09:00"
+    },
+    {}
+  ]
+}

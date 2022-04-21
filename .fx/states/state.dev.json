@@ -1,0 +1,46 @@
+{
+    "solution": {
+        "teamsAppTenantId": "434c4bbf-3df8-4265-91ec-9eefd4eae02e",
+        "subscriptionId": "74537b46-743d-483a-828a-82d0feda1392",
+        "subscriptionName": "inoue",
+        "tenantId": "434c4bbf-3df8-4265-91ec-9eefd4eae02e",
+        "needCreateResourceGroup": true,
+        "resourceGroupName": "rg-hermos_bot-dev",
+        "location": "Japan East",
+        "resourceNameSuffix": "2c01e4",
+        "provisionSucceeded": true
+    },
+    "fx-resource-appstudio": {
+        "tenantId": "434c4bbf-3df8-4265-91ec-9eefd4eae02e",
+        "teamsAppId": "2a3c580d-080e-445d-b4fb-0e06ad93718e",
+        "teamsAppUpdatedAt": 1649813356949
+    },
+    "fx-resource-identity": {
+        "identityName": "hermosbotdevca98e9",
+        "identityResourceId": "/subscriptions/74537b46-743d-483a-828a-82d0feda1392/resourceGroups/rg-hermos_bot-dev/providers/Microsoft.ManagedIdentity/userAssignedIdentities/hermosbotdevca98e9",
+        "identityClientId": "b3b37b50-1944-4605-8657-dccf82f293ad"
+    },
+    "fx-resource-bot": {
+        "botId": "697b329f-e2e1-4511-8ad6-22a9353b66c2",
+        "botPassword": "",
+        "objectId": "cb4138af-e99c-4230-9378-a59a31b0de27",
+        "skuName": "F1",
+        "siteName": "hermosbotdevca98e9bot",
+        "validDomain": "hermosbotdevca98e9bot.azurewebsites.net",
+        "appServicePlanName": "hermosbotdevca98e9bot",
+        "botWebAppResourceId": "/subscriptions/74537b46-743d-483a-828a-82d0feda1392/resourceGroups/rg-hermos_bot-dev/providers/Microsoft.Web/sites/hermosbotdevca98e9bot",
+        "siteEndpoint": "https://hermosbotdevca98e9bot.azurewebsites.net"
+    },
+    "fx-resource-aad-app-for-teams": {
+        "clientId": "184c77f9-cfae-4f6e-9b27-77666fb94d60",
+        "clientSecret": "",
+        "objectId": "5291ee65-fd94-4d83-be53-237c7a07308c",
+        "oauth2PermissionScopeId": "aade8086-1f78-41b7-affc-7ef7650a50bd",
+        "tenantId": "434c4bbf-3df8-4265-91ec-9eefd4eae02e",
+        "oauthHost": "https://login.microsoftonline.com",
+        "oauthAuthority": "https://login.microsoftonline.com/434c4bbf-3df8-4265-91ec-9eefd4eae02e",
+        "applicationIdUris": "api://botid-697b329f-e2e1-4511-8ad6-22a9353b66c2"
+    },
+    "fx-resource-cicd": {},
+    "fx-resource-api-connector": {}
+}

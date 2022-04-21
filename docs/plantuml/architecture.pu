@@ -1,0 +1,58 @@
+@startuml architecture
+title Architecture
+left to right direction
+
+' ① アイコンの定義 ＆ インポート
+!define AWSPuml https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/v10.0/dist
+!includeurl AWSPuml/AWSCommon.puml
+!includeurl AWSPuml/General/Client.puml
+!includeurl AWSPuml/GroupIcons/Cloudalt.puml
+!includeurl AWSPuml/ApplicationIntegration/APIGateway.puml
+!includeurl AWSPuml/Compute/Lambda.puml
+!includeurl AWSPuml/Database/DynamoDB.puml
+!includeurl AWSPuml/AWSSimplified.puml
+
+!define AzurePuml https://raw.githubusercontent.com/plantuml-stdlib/Azure-PlantUML/release/2-1/dist
+!includeurl AzurePuml/AzureCommon.puml
+!includeurl AzurePuml/General/Azure.puml
+!includeurl AzurePuml/Compute/AzureAppService.puml
+!includeurl AzurePuml/AIMachineLearning/AzureBotService.puml
+!includeurl AzurePuml/AIMachineLearning/AzureCognitiveServices.puml
+!includeurl AzurePuml/AIMachineLearning/AzureMachineLearningService.puml
+!includeurl AzurePuml/AzureSimplified.puml
+!includeurl AzurePuml/Databases/AzureCosmosDb.puml
+!includeurl AzurePuml/Storage/AzureBlobStorage.puml
+!include ./icons.pu
+
+' ② 利用するアイコンを宣言
+Client(clientUser, User, User client device)
+
+Teams(teams, "Teams", "Teams")
+
+Hrmos(hrmos, "HRMOS", "HRMOS")
+
+Pas(pas, "PAS", "PAS")
+
+Azure(azure, Azure ,Azure) {
+  AzureAppService(azureAppService,AzureAppService, AzureAppService){
+    AzureBotService(azureBotService, "BotService", "BotService")
+  }
+  
+  AzureMachineLearningService(azureMachineLearningService, MachineLearning, AzureMachineLearningService) {
+    AzureCognitiveServices(azureCognitiveServices, "CognitiveService", "CognitiveService")
+  }
+
+  AzureBlobStorage(azureBlobStorage, AzureBlobStorage, AzureBlobStorage) {
+    AzureCosmosDb(azureCosmosDb, "CosmosDb", "CosmosDb")
+  }
+
+}
+
+' ③ アイコンの関係を記述
+clientUser 0--> teams: chat
+teams 0--> azureBotService: Connect Bot service
+azureBotService 0---> hrmos: Send request via HRMOS api
+azureBotService 0---> pas: Send request via api
+azureMachineLearningService -[hidden]- azureBlobStorage
+
+@enduml
